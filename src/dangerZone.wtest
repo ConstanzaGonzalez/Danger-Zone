@@ -1,0 +1,19 @@
+import empleados.*
+
+describe "Incapacidad de empleados"{
+	test "Un espia es incapacitado cuando su salud es muy baja" {
+	
+		const unEspia = new Empleado(salud = 5, puesto = espia)
+		
+		assert.that(unEspia.incapacitado())
+	
+	}
+	test "Un oficinista no es incapacitado cuando su salud es alta" {
+	
+		const oficinista = new Empleado(salud = 50, puesto = new Oficinista(estrellas = 0))
+		
+		assert.notThat(oficinista.incapacitado())
+	
+	}
+}
+	
